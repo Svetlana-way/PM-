@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Manager - Полный курс обучения</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <h2>🚀 PM Академия</h2>
+                </div>
+                <div class="nav__menu">
+                    <a href="#dashboard" class="nav__link active" data-section="dashboard">Дашборд</a>
+                    <a href="#courses" class="nav__link" data-section="courses">Курсы</a>
+                    <a href="#resources" class="nav__link" data-section="resources">Ресурсы</a>
+                    <a href="#practice" class="nav__link" data-section="practice">Практика</a>
+                    <a href="#community" class="nav__link" data-section="community">Сообщество</a>
+                    <a href="#planner" class="nav__link" data-section="planner">Планировщик</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="container">
+                    <div class="section__header">
+                        <h1>Добро пожаловать в PM Академию!</h1>
+                        <p>Ваш путь к становлению продакт-менеджером</p>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <!-- Progress Overview -->
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Общий прогресс</h3>
+                                <div class="progress-circle">
+                                    <div class="progress-value">23%</div>
+                                </div>
+                                <div class="progress-stats">
+                                    <div class="stat">
+                                        <span class="stat__value">156</span>
+                                        <span class="stat__label">часов обучения</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__value">12</span>
+                                        <span class="stat__label">пройденных уроков</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Current Learning -->
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Текущее обучение</h3>
+                                <div class="current-lesson">
+                                    <div class="lesson-icon">📊</div>
+                                    <div class="lesson-info">
+                                        <h4>Metrics & Analytics</h4>
+                                        <p>Урок 3 из 8</p>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 37%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Продолжить</button>
+                            </div>
+                        </div>
+
+                        <!-- Achievements -->
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>Достижения</h3>
+                                <div class="achievements-grid" id="achievements-grid">
+                                    <!-- Achievements will be populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Calendar -->
+                        <div class="card dashboard-card">
+                            <div class="card__body">
+                                <h3>На этой неделе</h3>
+                                <div class="calendar-preview">
+                                    <div class="calendar-item">
+                                        <div class="calendar-date">ПТ 20</div>
+                                        <div class="calendar-event">User Research Workshop</div>
+                                    </div>
+                                    <div class="calendar-item">
+                                        <div class="calendar-date">СБ 21</div>
+                                        <div class="calendar-event">Product Strategy Reading</div>
+                                    </div>
+                                    <div class="calendar-item">
+                                        <div class="calendar-date">ВС 22</div>
+                                        <div class="calendar-event">Practice: PRD Writing</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses" class="section">
+                <div class="container">
+                    <div class="section__header">
+                        <h1>Курсы и программы</h1>
+                        <p>Выберите подходящий трек обучения</p>
+                    </div>
+
+                    <!-- Course Tracks -->
+                    <div class="course-tracks">
+                        <div class="track-card" data-track="beginner">
+                            <div class="track-icon">🌱</div>
+                            <h3>Новичок</h3>
+                            <p>0-6 месяцев опыта</p>
+                            <div class="track-badge">Основы PM</div>
+                        </div>
+                        <div class="track-card" data-track="advanced">
+                            <div class="track-icon">🚀</div>
+                            <h3>Продвинутый</h3>
+                            <p>6-12 месяцев опыта</p>
+                            <div class="track-badge">Стратегия & Рост</div>
+                        </div>
+                        <div class="track-card" data-track="expert">
+                            <div class="track-icon">⭐</div>
+                            <h3>Эксперт</h3>
+                            <p>12-18 месяцев опыта</p>
+                            <div class="track-badge">Лидерство</div>
+                        </div>
+                        <div class="track-card" data-track="international">
+                            <div class="track-icon">🌍</div>
+                            <h3>Международные</h3>
+                            <p>Coursera, edX, Google</p>
+                            <div class="track-badge">English</div>
+                        </div>
+                    </div>
+
+                    <!-- Course Filters -->
+                    <div class="course-filters">
+                        <select class="form-control" id="duration-filter">
+                            <option value="">Любая длительность</option>
+                            <option value="short">До 6 месяцев</option>
+                            <option value="medium">6-12 месяцев</option>
+                            <option value="long">12+ месяцев</option>
+                        </select>
+                        <select class="form-control" id="price-filter">
+                            <option value="">Любая цена</option>
+                            <option value="free">Бесплатно</option>
+                            <option value="budget">До 5000₽/мес</option>
+                            <option value="premium">5000₽+ /мес</option>
+                        </select>
+                        <select class="form-control" id="level-filter">
+                            <option value="">Любой уровень</option>
+                            <option value="Начинающий">Начинающий</option>
+                            <option value="Продвинутый">Продвинутый</option>
+                            <option value="Эксперт">Эксперт</option>
+                        </select>
+                    </div>
+
+                    <!-- Course List -->
+                    <div class="course-list" id="course-list">
+                        <!-- Courses will be populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="section">
+                <div class="container">
+                    <div class="section__header">
+                        <h1>Библиотека ресурсов</h1>
+                        <p>Книги, подкасты, инструменты и статьи</p>
+                    </div>
+
+                    <div class="resource-tabs">
+                        <button class="tab-btn active" data-tab="books">📚 Книги</button>
+                        <button class="tab-btn" data-tab="podcasts">🎧 Подкасты</button>
+                        <button class="tab-btn" data-tab="tools">🛠️ Инструменты</button>
+                        <button class="tab-btn" data-tab="articles">📰 Статьи</button>
+                    </div>
+
+                    <div class="resource-content">
+                        <div id="books-tab" class="tab-content active">
+                            <div class="resource-grid" id="books-grid">
+                                <!-- Books will be populated by JS -->
+                            </div>
+                        </div>
+                        <div id="podcasts-tab" class="tab-content">
+                            <div class="resource-grid" id="podcasts-grid">
+                                <!-- Podcasts will be populated by JS -->
+                            </div>
+                        </div>
+                        <div id="tools-tab" class="tab-content">
+                            <div class="resource-grid" id="tools-grid">
+                                <!-- Tools will be populated by JS -->
+                            </div>
+                        </div>
+                        <div id="articles-tab" class="tab-content">
+                            <div class="resource-grid">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4>Medium - Product Management</h4>
+                                        <p>Лучшие статьи о продакт-менеджменте</p>
+                                        <a href="https://medium.com/tag/product-management" target="_blank" class="btn btn--outline btn--sm">Читать</a>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4>Product Hunt Blog</h4>
+                                        <p>Инсайты от создателей продуктов</p>
+                                        <a href="https://blog.producthunt.com" target="_blank" class="btn btn--outline btn--sm">Читать</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section id="practice" class="section">
+                <div class="container">
+                    <div class="section__header">
+                        <h1>Практика и проекты</h1>
+                        <p>Реальные кейсы и задания для отработки навыков</p>
+                    </div>
+
+                    <div class="practice-categories">
+                        <div class="card practice-card">
+                            <div class="card__body">
+                                <div class="practice-icon">💼</div>
+                                <h3>Реальные кейсы</h3>
+                                <p>Разбор успешных и неуспешных продуктов</p>
+                                <div class="practice-stats">
+                                    <span class="status status--info">12 кейсов</span>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Начать</button>
+                            </div>
+                        </div>
+
+                        <div class="card practice-card">
+                            <div class="card__body">
+                                <div class="practice-icon">📋</div>
+                                <h3>Шаблоны документов</h3>
+                                <p>PRD, Roadmap, Research Plan и другие</p>
+                                <div class="practice-stats">
+                                    <span class="status status--success">15 шаблонов</span>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Скачать</button>
+                            </div>
+                        </div>
+
+                        <div class="card practice-card">
+                            <div class="card__body">
+                                <div class="practice-icon">🎮</div>
+                                <h3>Симуляторы</h3>
+                                <p>Интерактивные упражнения в стиле GoPractice</p>
+                                <div class="practice-stats">
+                                    <span class="status status--warning">8 симуляций</span>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Играть</button>
+                            </div>
+                        </div>
+
+                        <div class="card practice-card">
+                            <div class="card__body">
+                                <div class="practice-icon">🏆</div>
+                                <h3>Конкурсы</h3>
+                                <p>Hackathon и продуктовые челленджи</p>
+                                <div class="practice-stats">
+                                    <span class="status status--error">Активно: 2</span>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Участвовать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section id="community" class="section">
+                <div class="container">
+                    <div class="section__header">
+                        <h1>Менторство и сообщество</h1>
+                        <p>Подключайтесь к сообществу продакт-менеджеров</p>
+                    </div>
+
+                    <div class="community-grid">
+                        <div class="card">
+                            <div class="card__body">
+                                <div class="community-icon">👨‍🏫</div>
+                                <h3>Найти ментора</h3>
+                                <p>Персональное наставничество от опытных PM</p>
+                                <div class="mentor-platforms">
+                                    <a href="https://adplist.org" target="_blank" class="btn btn--outline btn--sm">ADPList</a>
+                                    <a href="https://solvery.io" target="_blank" class="btn btn--outline btn--sm">Solvery</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <div class="community-icon">💬</div>
+                                <h3>Чаты и форумы</h3>
+                                <p>Общение с коллегами и обмен опытом</p>
+                                <div class="chat-links">
+                                    <a href="#" class="btn btn--secondary btn--sm">Discord PM</a>
+                                    <a href="#" class="btn btn--secondary btn--sm">Telegram</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <div class="community-icon">🤝</div>
+                                <h3>Нетворкинг</h3>
+                                <p>Еженедельные встречи и мероприятия</p>
+                                <div class="event-calendar">
+                                    <div class="event-item">
+                                        <strong>Ср 25 июня</strong>
+                                        <p>PM Coffee Chat</p>
+                                    </div>
+                                    <div class="event-item">
+                                        <strong>Сб 28 июня</strong>
+                                        <p>Product Meetup</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <div class="community-icon">❓</div>
+                                <h3>Q&A сессии</h3>
+                                <p>Задавайте вопросы экспертам</p>
+                                <div class="qa-schedule">
+                                    <p><strong>Каждый четверг в 18:00</strong></p>
+                                    <p>Следующая сессия: 26 июня</p>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Записаться</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planner Section -->
+            <section id="planner" class="section">
+                <div class="container">
+                    <div class="section__header">
+                        <h1>Планировщик обучения</h1>
+                        <p>Организуйте свое время и отслеживайте прогресс</p>
+                    </div>
+
+                    <div class="planner-grid">
+                        <div class="card planner-card">
+                            <div class="card__body">
+                                <h3>Персональный календарь</h3>
+                                <div class="calendar-widget">
+                                    <div class="calendar-header">
+                                        <button class="calendar-nav" id="prev-month">←</button>
+                                        <h4 id="current-month">Июнь 2025</h4>
+                                        <button class="calendar-nav" id="next-month">→</button>
+                                    </div>
+                                    <div class="calendar-grid" id="calendar-grid">
+                                        <!-- Calendar will be populated by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card planner-card">
+                            <div class="card__body">
+                                <h3>Pomodoro таймер</h3>
+                                <div class="pomodoro-timer">
+                                    <div class="timer-display" id="timer-display">25:00</div>
+                                    <div class="timer-controls">
+                                        <button class="btn btn--secondary" id="timer-start">Старт</button>
+                                        <button class="btn btn--outline" id="timer-pause">Пауза</button>
+                                        <button class="btn btn--outline" id="timer-reset">Сброс</button>
+                                    </div>
+                                    <div class="timer-sessions">
+                                        <span>Сессии сегодня: <strong id="sessions-count">0</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card planner-card">
+                            <div class="card__body">
+                                <h3>Еженедельные цели</h3>
+                                <div class="goals-list" id="goals-list">
+                                    <div class="goal-item">
+                                        <input type="checkbox" id="goal1" class="goal-checkbox">
+                                        <label for="goal1">Пройти 3 урока по аналитике</label>
+                                    </div>
+                                    <div class="goal-item">
+                                        <input type="checkbox" id="goal2" class="goal-checkbox">
+                                        <label for="goal2">Прочитать главу из "Inspired"</label>
+                                    </div>
+                                    <div class="goal-item">
+                                        <input type="checkbox" id="goal3" class="goal-checkbox" checked>
+                                        <label for="goal3">Выполнить практическое задание</label>
+                                    </div>
+                                </div>
+                                <button class="btn btn--primary btn--full-width mt-8">Добавить цель</button>
+                            </div>
+                        </div>
+
+                        <div class="card planner-card">
+                            <div class="card__body">
+                                <h3>Трекинг времени</h3>
+                                <div class="time-stats">
+                                    <div class="stat-row">
+                                        <span>Сегодня:</span>
+                                        <strong>2ч 15м</strong>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span>Эта неделя:</span>
+                                        <strong>8ч 30м</strong>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span>Всего:</span>
+                                        <strong>156ч 42м</strong>
+                                    </div>
+                                </div>
+                                <div class="time-chart">
+                                    <div class="chart-bar" style="height: 60%">
+                                        <span>Пн</span>
+                                    </div>
+                                    <div class="chart-bar" style="height: 80%">
+                                        <span>Вт</span>
+                                    </div>
+                                    <div class="chart-bar" style="height: 40%">
+                                        <span>Ср</span>
+                                    </div>
+                                    <div class="chart-bar" style="height: 90%">
+                                        <span>Чт</span>
+                                    </div>
+                                    <div class="chart-bar" style="height: 70%">
+                                        <span>Пт</span>
+                                    </div>
+                                    <div class="chart-bar" style="height: 30%">
+                                        <span>Сб</span>
+                                    </div>
+                                    <div class="chart-bar" style="height: 50%">
+                                        <span>Вс</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
